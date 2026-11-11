@@ -50,8 +50,8 @@ h1 { font-size:clamp(2.2rem,8vw,5rem); letter-spacing:.08em; text-transform:uppe
 nav a, section p a { margin:0 .75rem; }
 main { max-width:42rem; margin:0 auto; padding:0 1rem; }
 button { background:none; border:1px solid var(--dim); color:var(--fg); margin-left:.5rem; cursor:pointer; }
-button:disabled { border-color:var(--accent); cursor:default; }
-h2 { border-bottom:1px solid var(--accent); padding-bottom:.25rem; }
+button:disabled { border-color:var(--fg); cursor:default; }
+h2 { border-bottom:1px solid var(--line); padding-bottom:.25rem; }
 ul { padding:0; list-style:none; }
 small, footer { color:var(--dim); }
 footer { text-align:center; padding:3rem 1rem; }

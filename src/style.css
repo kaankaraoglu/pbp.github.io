@@ -1,7 +1,8 @@
-:root { color-scheme: dark; --bg:#0a0a0a; --fg:#e8e8e8; --dim:#8a8a8a; --accent:#b3121b; }
+:root { color-scheme: dark; --bg:#000; --fg:#fff; --dim:#8a8a8a; --line:#444; }
 * { box-sizing: border-box; }
 body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.6 'Cal Sans',sans-serif; font-synthesis:none; }
-a { color:var(--accent); }
+a { color:var(--fg); }
+a:hover { color:var(--dim); }
 button { font:inherit; }
 
 /* Page fade: in on load, out when following a link. */
