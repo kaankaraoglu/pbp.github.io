@@ -9,7 +9,10 @@ const nav = [['music', '/music/', 'Music'], ['shows', '/shows/', 'Shows'], ['abo
     <h1 lang="en"><a href="/">Pitch Black Process</a></h1>
     <nav>
       <a v-for="[key, href, id] in nav" :key="key" :href="href" :aria-current="current === id ? 'page' : null">{{ t(key) }}</a>
-      <button v-for="l in ['en', 'tr']" :key="l" :disabled="lang === l" @click="lang = l">{{ l.toUpperCase() }}</button>
+      <button v-for="l in ['tr', 'en']" :key="l" class="flag" :disabled="lang === l" :aria-label="l === 'tr' ? 'Türkçe' : 'English'" :aria-pressed="lang === l" @click="lang = l">
+        <svg v-if="l === 'tr'" viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="currentColor"/><circle cx="11" cy="10" r="5" fill="#000"/><circle cx="12.5" cy="10" r="4" fill="currentColor"/><path d="M19 10l3.4-1.1-2.1 2.9v-3.6l2.1 2.9z" fill="#000"/></svg>
+        <svg v-else viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="currentColor"/><path d="M0 0L30 20M30 0L0 20" stroke="#000" stroke-width="3"/><path d="M15 0v20M0 10h30" stroke="#000" stroke-width="6"/><path d="M15 0v20M0 10h30" stroke="currentColor" stroke-width="3"/></svg>
+      </button>
     </nav>
   </header>
   <main><slot /></main>
