@@ -1,18 +1,18 @@
 <script setup>
 import { lang, t } from './i18n'
-// Sources: Metallian, Spirit of Metal, Metal Temple, Rock N Growl, Rebel Radio.
-const releases = [
-  { title: 'SIR', type: 'ep', year: 2019 },
-  { title: 'Derin', type: 'album', year: 2016 },
-  { title: 'Hand of God?', type: 'album', year: 2013 },
-  { title: 'Deceiver', type: 'ep', year: 2013 },
+// Content comes from the band's own biography text.
+const albums = [
+  { title: 'Derin', year: 2015 },
+  { title: 'Hand of God?', year: 2013, note: 'reissue' },
+  { title: 'Affliction: Execution Is Necessary', year: 2007 },
+  { title: 'One Reality', year: 2003 },
 ]
-const members = [
-  { name: 'Emrah Demirel', role: 'vocalsGuitar' },
-  { name: 'Kerem İnci', role: 'guitar' },
-  { name: 'Emre Demirel', role: 'bass' },
-  { name: 'Fikri Yargıcı', role: 'drums' },
+const singles = [
+  { title: 'Heroes of 2020', year: 2020 },
+  { title: 'Buselik Makamına', year: 2020, note: 'sirEp' },
+  { title: 'Zahid Bizi Tan Eyleme', year: 2019, note: 'sirEp' },
 ]
+const members = ['Emrah Demirel', 'Kerem İnci', 'Emre Demirel']
 const shows = []
 const links = [
   { label: 'Website', url: 'https://www.pitchblackprocess.com/' },
@@ -31,7 +31,10 @@ const links = [
   <main>
     <section id="music">
       <h2>{{ t('music') }}</h2>
-      <ul><li v-for="r in releases" :key="r.title">{{ r.title }} <small>{{ t(r.type) }}, {{ r.year }}</small></li></ul>
+      <template v-for="[key, list] in [['albums', albums], ['singles', singles]]" :key="key">
+        <h3>{{ t(key) }}</h3>
+        <ul><li v-for="r in list" :key="r.title">{{ r.title }} <small>{{ r.year }}<template v-if="r.note">, {{ t(r.note) }}</template></small></li></ul>
+      </template>
     </section>
     <section id="shows">
       <h2>{{ t('shows') }}</h2>
@@ -40,9 +43,9 @@ const links = [
     </section>
     <section id="about">
       <h2>{{ t('about') }}</h2>
-      <p>{{ t('bio') }}</p>
+      <p v-for="p in t('bio')" :key="p">{{ p }}</p>
       <h3>{{ t('members') }}</h3>
-      <ul><li v-for="m in members" :key="m.name">{{ m.name }} <small>{{ t(m.role) }}</small></li></ul>
+      <ul><li v-for="m in members" :key="m">{{ m }}</li></ul>
     </section>
     <section id="contact">
       <h2>{{ t('contact') }}</h2>
