@@ -6,7 +6,7 @@ const nav = [['music', '/music/', 'Music'], ['shows', '/shows/', 'Shows'], ['abo
 
 <template>
   <header class="hero">
-    <h1 lang="en"><a href="/">Pitch Black Process</a></h1>
+    <h1 lang="en"><a href="/"><img src="/logo.png" alt="Pitch Black Process"></a></h1>
     <nav>
       <a v-for="[key, href, id] in nav" :key="key" :href="href" :aria-current="current === id ? 'page' : null">{{ t(key) }}</a>
       <button v-for="l in ['en', 'tr']" :key="l" :disabled="lang === l" @click="lang = l">{{ l.toUpperCase() }}</button>
@@ -18,8 +18,8 @@ const nav = [['music', '/music/', 'Music'], ['shows', '/shows/', 'Shows'], ['abo
 
 <style>
 .hero { text-align:center; padding:6rem 1rem 3rem; }
-h1 { font-size:clamp(2.2rem,8vw,5rem); letter-spacing:0; word-spacing:.08em; font-synthesis-weight:auto; text-transform:uppercase; margin:0; }
-h1 a { text-decoration:none; }
+h1 { margin:0; }
+h1 img { display:block; margin:0 auto; width:min(90vw,40rem); height:auto; }
 nav a, main p a { margin:0 .75rem; }
 nav a[aria-current] { color:var(--dim); }
 main { max-width:42rem; margin:0 auto; padding:0 1rem; }
