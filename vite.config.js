@@ -5,4 +5,9 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   base: './', // relative paths work under any Pages URL
   plugins: [vue()],
+  build: {
+    rollupOptions: {
+      input: ['index.html', 'music/index.html', 'shows/index.html', 'biography/index.html', 'contact/index.html'],
+    },
+  },
 })
