@@ -3,5 +3,6 @@ import { defineConfig } from 'vite'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: './', // relative paths work under any Pages URL
   plugins: [vue()],
 })
