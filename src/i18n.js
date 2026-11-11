@@ -1,9 +1,9 @@
 import { ref, watchEffect } from 'vue'
 
 export const messages = {
-  en: { music: 'Music', shows: 'Shows', about: 'About', contact: 'Contact',
+  en: { music: 'Music', shows: 'Shows', about: 'Biography', contact: 'Contact',
         noShows: 'No shows announced.', bio: 'Band biography goes here.' },
-  tr: { music: 'Müzik', shows: 'Konserler', about: 'Hakkında', contact: 'İletişim',
+  tr: { music: 'Müzik', shows: 'Konserler', about: 'Biyografi', contact: 'İletişim',
         noShows: 'Duyurulmuş konser yok.', bio: 'Grup biyografisi buraya gelecek.' },
 }
 
