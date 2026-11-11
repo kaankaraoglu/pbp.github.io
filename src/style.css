@@ -6,7 +6,7 @@ a:hover { color:var(--dim); }
 button { font:inherit; }
 
 /* Page fade: in on load, out when following a link. */
-body { animation: fade-in 2.5s ease both; transition: opacity 1.5s ease; }
+body { animation: fade-in 5s ease both; transition: opacity 5s ease; }
 body.leaving { opacity: 0; }
 @keyframes fade-in { from { opacity: 0; } }
 @media (prefers-reduced-motion: reduce) {
