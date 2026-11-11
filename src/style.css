@@ -3,3 +3,11 @@
 body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.6 'Cal Sans',sans-serif; font-synthesis:none; }
 a { color:var(--accent); }
 button { font:inherit; }
+
+/* Page fade: in on load, out when following a link. */
+body { animation: fade-in 1s ease both; transition: opacity .6s ease; }
+body.leaving { opacity: 0; }
+@keyframes fade-in { from { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  body { animation: none; transition: none; }
+}
