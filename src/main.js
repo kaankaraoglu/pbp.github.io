@@ -15,7 +15,7 @@ document.addEventListener('click', (e) => {
   if (a.origin === location.origin && a.pathname === location.pathname) return
   e.preventDefault()
   document.body.classList.add('leaving')
-  setTimeout(() => { location.href = a.href }, 5000)
+  setTimeout(() => { location.href = a.href }, 2000)
 })
 // Back/forward cache can restore the page still faded out.
 addEventListener('pageshow', () => document.body.classList.remove('leaving'))
