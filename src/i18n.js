@@ -26,8 +26,7 @@ export const messages = {
 }
 
 const saved = localStorage.getItem('lang')
-const guess = navigator.language?.startsWith('tr') ? 'tr' : 'en'
-export const lang = ref(saved in messages ? saved : guess)
+export const lang = ref(saved in messages ? saved : 'tr')
 
 watchEffect(() => {
   document.documentElement.lang = lang.value

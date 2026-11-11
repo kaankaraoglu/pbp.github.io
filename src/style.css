@@ -6,9 +6,14 @@ a:hover { color:var(--dim); }
 button { font:inherit; }
 
 /* Page fade: in on load, out when following a link. */
-body { animation: fade-in 5s ease both; transition: opacity 5s ease; }
+body { animation: fade-in 5s ease-out backwards; transition: opacity 5s ease; }
 body.leaving { opacity: 0; }
 @keyframes fade-in { from { opacity: 0; } }
 @media (prefers-reduced-motion: reduce) {
   body { animation: none; transition: none; }
 }
+
+.flag { background:none; border:0; padding:0 .2em; cursor:pointer; color:inherit; opacity:.5; }
+.flag:hover { opacity:.8; }
+.flag:disabled { opacity:1; cursor:default; }
+.flag svg { width:1.6em; height:auto; display:block; }
