@@ -45,7 +45,7 @@ const email = 'contact@example.com'
 
 <style scoped>
 .hero { text-align:center; padding:6rem 1rem 3rem; }
-h1 { font-size:clamp(2.2rem,8vw,5rem); letter-spacing:.08em; text-transform:uppercase; margin:0; }
+h1 { font-size:clamp(2.2rem,8vw,5rem); letter-spacing:0; word-spacing:.08em; font-synthesis-weight:auto; text-transform:uppercase; margin:0; }
 .hero p { color:var(--dim); }
 nav a, section p a { margin:0 .75rem; }
 main { max-width:42rem; margin:0 auto; padding:0 1rem; }
