@@ -17,3 +17,8 @@ body.leaving { opacity: 0; }
 .flag:hover { opacity:.8; }
 .flag:disabled { opacity:1; cursor:default; }
 .flag svg { width:1.6em; height:auto; display:block; }
+
+.releases { list-style:none; padding:0; }
+.releases li { display:flex; align-items:center; gap:1em; margin:.6em 0; }
+.releases img { object-fit:cover; }
+.releases a { margin-left:.8em; }
