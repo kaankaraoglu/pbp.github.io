@@ -9,7 +9,7 @@ const nav = [['music', '/music/', 'Music'], ['shows', '/shows/', 'Shows'], ['abo
     <h1 lang="en"><a href="/">Pitch Black Process</a></h1>
     <nav>
       <a v-for="[key, href, id] in nav" :key="key" :href="href" :aria-current="current === id ? 'page' : null">{{ t(key) }}</a>
-      <button v-for="l in ['en', 'tr']" :key="l" :disabled="lang === l" @click="lang = l">{{ l.toUpperCase() }}</button>
+      <button v-for="l in ['en', 'tr']" :key="l" :disabled="lang === l" :aria-label="l.toUpperCase()" @click="lang = l">{{ {en:'🇬🇧',tr:'🇹🇷'}[l] }}</button>
     </nav>
   </header>
   <main><slot /></main>
@@ -25,6 +25,7 @@ nav a[aria-current] { color:var(--dim); }
 main { max-width:42rem; margin:0 auto; padding:0 1rem; }
 button { background:none; border:1px solid var(--dim); color:var(--fg); margin-left:.5rem; cursor:pointer; }
 button:disabled { border-color:var(--fg); cursor:default; }
+button:not(:disabled) { opacity:.6; }
 h2 { border-bottom:1px solid var(--line); padding-bottom:.25rem; }
 ul { padding:0; list-style:none; }
 h3 { font-size:1rem; color:var(--dim); }
