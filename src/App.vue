@@ -1,15 +1,24 @@
 <script setup>
 import { lang, t } from './i18n'
-// TODO: replace placeholder content with real band info.
-const releases = [{ title: 'Release title', year: 'YYYY', url: '#' }]
-const shows = [{ date: 'YYYY-MM-DD', venue: 'Venue', city: 'City', url: '' }]
-const links = [
-  { label: 'Bandcamp', url: '#' },
-  { label: 'Spotify', url: '#' },
-  { label: 'YouTube', url: '#' },
-  { label: 'Instagram', url: '#' },
+// Sources: Metallian, Spirit of Metal, Metal Temple, Rock N Growl, Rebel Radio.
+const releases = [
+  { title: 'SIR', type: 'ep', year: 2019 },
+  { title: 'Derin', type: 'album', year: 2016 },
+  { title: 'Hand of God?', type: 'album', year: 2013 },
+  { title: 'Deceiver', type: 'ep', year: 2013 },
 ]
-const email = 'contact@example.com'
+const members = [
+  { name: 'Emrah Demirel', role: 'vocalsGuitar' },
+  { name: 'Kerem İnci', role: 'guitar' },
+  { name: 'Emre Demirel', role: 'bass' },
+  { name: 'Fikri Yargıcı', role: 'drums' },
+]
+const shows = []
+const links = [
+  { label: 'Website', url: 'https://www.pitchblackprocess.com/' },
+  { label: 'Facebook', url: 'https://www.facebook.com/pitchblackprocess' },
+  { label: 'YouTube', url: 'https://youtube.com/pitchblackprocess' },
+]
 </script>
 
 <template>
@@ -22,7 +31,7 @@ const email = 'contact@example.com'
   <main>
     <section id="music">
       <h2>{{ t('music') }}</h2>
-      <ul><li v-for="r in releases" :key="r.title"><a :href="r.url">{{ r.title }}</a> <small>{{ r.year }}</small></li></ul>
+      <ul><li v-for="r in releases" :key="r.title">{{ r.title }} <small>{{ t(r.type) }}, {{ r.year }}</small></li></ul>
     </section>
     <section id="shows">
       <h2>{{ t('shows') }}</h2>
@@ -32,10 +41,11 @@ const email = 'contact@example.com'
     <section id="about">
       <h2>{{ t('about') }}</h2>
       <p>{{ t('bio') }}</p>
+      <h3>{{ t('members') }}</h3>
+      <ul><li v-for="m in members" :key="m.name">{{ m.name }} <small>{{ t(m.role) }}</small></li></ul>
     </section>
     <section id="contact">
       <h2>{{ t('contact') }}</h2>
-      <p><a :href="'mailto:' + email">{{ email }}</a></p>
       <p><a v-for="l in links" :key="l.label" :href="l.url">{{ l.label }}</a></p>
     </section>
   </main>
@@ -51,6 +61,7 @@ button { background:none; border:1px solid var(--dim); color:var(--fg); margin-l
 button:disabled { border-color:var(--fg); cursor:default; }
 h2 { border-bottom:1px solid var(--line); padding-bottom:.25rem; }
 ul { padding:0; list-style:none; }
+h3 { font-size:1rem; color:var(--dim); }
 small, footer { color:var(--dim); }
 footer { text-align:center; padding:3rem 1rem; }
 </style>
