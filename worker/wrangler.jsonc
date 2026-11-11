@@ -1,0 +1,7 @@
+{
+  "name": "pbp-basic-auth",
+  "main": "index.js",
+  "compatibility_date": "2026-11-11",
+  "workers_dev": false,
+  "routes": [{ "pattern": "pbp.kaankaraoglu.com/*", "zone_name": "kaankaraoglu.com" }]
+}
