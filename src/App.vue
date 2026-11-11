@@ -14,7 +14,7 @@ const email = 'contact@example.com'
 
 <template>
   <header class="hero">
-    <h1>Pitch Black Process</h1>
+    <h1 lang="en">Pitch Black Process</h1>
     <nav><a href="#music">{{ t('music') }}</a> <a href="#shows">{{ t('shows') }}</a> <a href="#about">{{ t('about') }}</a> <a href="#contact">{{ t('contact') }}</a>
       <button v-for="l in ['en', 'tr']" :key="l" :disabled="lang === l" @click="lang = l">{{ l.toUpperCase() }}</button>
     </nav>
@@ -39,7 +39,7 @@ const email = 'contact@example.com'
       <p><a v-for="l in links" :key="l.label" :href="l.url">{{ l.label }}</a></p>
     </section>
   </main>
-  <footer>© Pitch Black Process</footer>
+  <footer lang="en">© Pitch Black Process</footer>
 </template>
 
 <style scoped>
